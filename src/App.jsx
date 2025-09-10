@@ -1,0 +1,86 @@
+import React, { useState } from 'react';
+import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
+
+export default function App() {
+  const [showPrivacy, setShowPrivacy] = useState(false);
+
+  return (
+    <div className="flex flex-col min-h-screen">
+      {/* Navbar */}
+      <nav className="bg-blue-600 text-white p-4 flex justify-between items-center">
+        <h1 className="text-xl font-bold">Amazonsoft</h1>
+        <ul className="flex gap-6">
+          <li><a href="#home" className="hover:underline">Home</a></li>
+          <li><a href="#empresa" className="hover:underline">Empresa</a></li>
+          <li><a href="#fornecedores" className="hover:underline">Fornecedores</a></li>
+          <li><a href="#projetos" className="hover:underline">Projetos</a></li>
+          <li><a href="#orcamentos" className="hover:underline">Orçamentos</a></li>
+        </ul>
+      </nav>
+
+      {/* Home */}
+      <section id="home" className="flex-1 flex items-center justify-center text-center p-10">
+        <h2 className="text-3xl font-bold">Bem-vindo à Amazonsoft</h2>
+      </section>
+
+      {/* Empresa */}
+      <section id="empresa" className="bg-gray-100 p-8">
+        <h3 className="text-2xl font-semibold mb-4">Sobre a Amazonsoft</h3>
+        <p className="text-gray-700 leading-relaxed">
+          A Amazonsoft foi criada com o intuito de fazer com que pequenos, médios e grandes negócios alcancem seus objetivos por meio de soluções tecnológicas e inovadoras...
+        </p>
+      </section>
+
+      {/* Fornecedores */}
+      <section id="fornecedores" className="p-8 text-center">
+        <h3 className="text-2xl font-semibold mb-6">Nossos Fornecedores</h3>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+          <img src="/fornecedor1.png" alt="Fornecedor 1" className="mx-auto h-16" />
+          <img src="/fornecedor2.png" alt="Fornecedor 2" className="mx-auto h-16" />
+          <img src="/fornecedor3.png" alt="Fornecedor 3" className="mx-auto h-16" />
+          <img src="/fornecedor4.png" alt="Fornecedor 4" className="mx-auto h-16" />
+          <img src="/fornecedor5.png" alt="Fornecedor 5" className="mx-auto h-16" />
+          <img src="/fornecedor6.png" alt="Fornecedor 6" className="mx-auto h-16" />
+        </div>
+      </section>
+
+      {/* Projetos */}
+      <section id="projetos" className="bg-gray-100 p-8">
+        <h3 className="text-2xl font-semibold mb-6 text-center">Projetos</h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <img src="/projeto1.jpg" alt="Projeto 1" className="rounded-lg shadow" />
+          <img src="/projeto2.jpg" alt="Projeto 2" className="rounded-lg shadow" />
+          <img src="/projeto3.jpg" alt="Projeto 3" className="rounded-lg shadow" />
+        </div>
+      </section>
+
+      {/* Orçamentos */}
+      <section id="orcamentos" className="p-8">
+        <h3 className="text-2xl font-semibold mb-4 text-center">Solicite um Orçamento</h3>
+        <form className="max-w-lg mx-auto bg-white p-6 rounded-lg shadow space-y-4">
+          <input type="text" placeholder="Nome" className="w-full border p-2 rounded" required />
+          <input type="email" placeholder="Email" className="w-full border p-2 rounded" required />
+          <textarea placeholder="Descreva sua necessidade..." className="w-full border p-2 rounded" rows="4"></textarea>
+          <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 w-full">Enviar</button>
+        </form>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-900 text-white p-4">
+        <button
+          onClick={() => setShowPrivacy(!showPrivacy)}
+          className="flex items-center justify-center mx-auto"
+        >
+          <span>Política de Privacidade</span>
+          {showPrivacy ? <FaChevronUp className="ml-2" /> : <FaChevronDown className="ml-2" />}
+        </button>
+        {showPrivacy && (
+          <p className="text-gray-300 mt-4 text-sm max-w-3xl mx-auto">
+            A Amazonsoft está comprometida em proteger a privacidade de seus usuários. Esta Política descreve como coletamos, usamos e protegemos as informações...
+          </p>
+        )}
+        <p className="text-center text-xs mt-4">&copy; {new Date().getFullYear()} Amazonsoft</p>
+      </footer>
+    </div>
+  );
+}
