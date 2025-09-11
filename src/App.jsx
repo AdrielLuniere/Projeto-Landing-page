@@ -20,12 +20,12 @@ export default function App() {
 
       {/* Home */}
       <section id="home" className="flex-1 flex items-center justify-center text-center p-10">
-        <h2 className="text-3xl font-bold">Bem-vindo à Amazonsoft</h2>
+        <h2 className="text-3xl font-bold">Bem-vindo à Lusystech</h2>
       </section>
 
       {/* Empresa */}
       <section id="empresa" className="bg-gray-100 p-8">
-        <h3 className="text-2xl font-semibold mb-4">Sobre a Amazonsoft</h3>
+        <h3 className="text-2xl font-semibold mb-4">Sobre a Lusystech</h3>
         <p className="text-gray-700 leading-relaxed">
           A Amazonsoft foi criada com o intuito de fazer com que pequenos, médios e grandes negócios alcancem seus objetivos por meio de soluções tecnológicas e inovadoras...
         </p>
