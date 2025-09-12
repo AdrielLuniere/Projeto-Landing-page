@@ -1,6 +1,82 @@
 import React, { useState } from 'react';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import { useState } from "react";
+import emailjs from "emailjs-com";
 
+export default function App() {
+  const [form, setForm] = useState({ nome: "", email: "", mensagem: "" });
+  const [status, setStatus] = useState("");
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .send(
+        "SEU_SERVICE_ID", // Substitua pelo seu
+        "SEU_TEMPLATE_ID", // Substitua pelo seu
+        form,
+        "SUA_PUBLIC_KEY" // Substitua pela sua
+      )
+      .then(
+        () => {
+          setStatus("✅ Orçamento enviado com sucesso!");
+          setForm({ nome: "", email: "", mensagem: "" });
+        },
+        () => {
+          setStatus("❌ Erro ao enviar. Tente novamente.");
+        }
+      );
+  };
+
+  return (
+    <div className="min-h-screen bg-gray-100">
+      {/* Seção Orçamento */}
+      <section id="orcamentos" className="p-6 bg-white rounded-2xl shadow-md max-w-lg mx-auto mt-10">
+        <h2 className="text-2xl font-bold text-center mb-4">Solicitar Orçamento</h2>
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <input
+            type="text"
+            name="nome"
+            placeholder="Seu Nome"
+            value={form.nome}
+            onChange={handleChange}
+            required
+            className="w-full p-3 border border-gray-300 rounded-xl"
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Seu Email"
+            value={form.email}
+            onChange={handleChange}
+            required
+            className="w-full p-3 border border-gray-300 rounded-xl"
+          />
+          <textarea
+            name="mensagem"
+            placeholder="Descreva sua necessidade"
+            value={form.mensagem}
+            onChange={handleChange}
+            required
+            rows="4"
+            className="w-full p-3 border border-gray-300 rounded-xl"
+          ></textarea>
+          <button
+            type="submit"
+            className="w-full bg-blue-600 text-white font-bold py-3 rounded-xl hover:bg-blue-700 transition"
+          >
+            Enviar
+          </button>
+        </form>
+        {status && <p className="text-center mt-3">{status}</p>}
+      </section>
+    </div>
+  );
+}
 export default function App() {
   const [showPrivacy, setShowPrivacy] = useState(false);
 
