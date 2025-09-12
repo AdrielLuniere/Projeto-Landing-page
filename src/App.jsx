@@ -16,7 +16,7 @@ export default function App() {
 
     emailjs
       .send(
-        "SEU_SERVICE_ID", // Substitua pelo seu
+        "service_vlst6kk", // Substitua pelo seu
         "SEU_TEMPLATE_ID", // Substitua pelo seu
         form,
         "SUA_PUBLIC_KEY" // Substitua pela sua
