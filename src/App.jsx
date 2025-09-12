@@ -16,10 +16,10 @@ export default function App() {
 
     emailjs
       .send(
-        "service_vlst6kk", // Substitua pelo seu
-        "SEU_TEMPLATE_ID", // Substitua pelo seu
+        "service_kfyk5jl", // Substitua pelo seu
+        "template_7mu6zrr", // Substitua pelo seu
         form,
-        "SUA_PUBLIC_KEY" // Substitua pela sua
+        "JW3L9h16D1W4OwKGD" // Substitua pela sua
       )
       .then(
         () => {
