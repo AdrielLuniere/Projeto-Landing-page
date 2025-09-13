@@ -152,8 +152,8 @@ export default function App() {
             {/* Contato */}
             <div>
               <h3 className="font-bold text-lg mb-2">Informações de contato:</h3>
-              <p>Telefone: (93) 99199-2213</p>
-              <p>Email: amazonsof@amazonsoft.tech</p>
+              <p>Telefone: (31) 99596-4336</p>
+              <p>Email: lusystech@hotmail.com</p>
             </div>
           </div>
 
