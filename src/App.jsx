@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
-import { useState } from "react";
 import emailjs from "emailjs-com";
 
 export default function App() {
   const [form, setForm] = useState({ nome: "", email: "", mensagem: "" });
   const [status, setStatus] = useState("");
+  const [showPrivacy, setShowPrivacy] = useState(false);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -33,58 +33,10 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100">
-      {/* Seção Orçamento */}
-      <section id="orcamentos" className="p-6 bg-white rounded-2xl shadow-md max-w-lg mx-auto mt-10">
-        <h2 className="text-2xl font-bold text-center mb-4">Solicitar Orçamento</h2>
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <input
-            type="text"
-            name="nome"
-            placeholder="Seu Nome"
-            value={form.nome}
-            onChange={handleChange}
-            required
-            className="w-full p-3 border border-gray-300 rounded-xl"
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Seu Email"
-            value={form.email}
-            onChange={handleChange}
-            required
-            className="w-full p-3 border border-gray-300 rounded-xl"
-          />
-          <textarea
-            name="mensagem"
-            placeholder="Descreva sua necessidade"
-            value={form.mensagem}
-            onChange={handleChange}
-            required
-            rows="4"
-            className="w-full p-3 border border-gray-300 rounded-xl"
-          ></textarea>
-          <button
-            type="submit"
-            className="w-full bg-blue-600 text-white font-bold py-3 rounded-xl hover:bg-blue-700 transition"
-          >
-            Enviar
-          </button>
-        </form>
-        {status && <p className="text-center mt-3">{status}</p>}
-      </section>
-    </div>
-  );
-}
-export default function App() {
-  const [showPrivacy, setShowPrivacy] = useState(false);
-
-  return (
     <div className="flex flex-col min-h-screen">
       {/* Navbar */}
       <nav className="bg-blue-600 text-white p-4 flex justify-between items-center">
-        <h1 className="text-xl font-bold">Amazonsoft</h1>
+        <h1 className="text-xl font-bold">Lusystech</h1>
         <ul className="flex gap-6">
           <li><a href="#home" className="hover:underline">Home</a></li>
           <li><a href="#empresa" className="hover:underline">Empresa</a></li>
@@ -103,7 +55,7 @@ export default function App() {
       <section id="empresa" className="bg-gray-100 p-8">
         <h3 className="text-2xl font-semibold mb-4">Sobre a Lusystech</h3>
         <p className="text-gray-700 leading-relaxed">
-          A Amazonsoft foi criada com o intuito de fazer com que pequenos, médios e grandes negócios alcancem seus objetivos por meio de soluções tecnológicas e inovadoras...
+          A Lusystech foi criada com o intuito de fazer com que pequenos, médios e grandes negócios alcancem seus objetivos por meio de soluções tecnológicas e inovadoras...
         </p>
       </section>
 
@@ -133,12 +85,42 @@ export default function App() {
       {/* Orçamentos */}
       <section id="orcamentos" className="p-8">
         <h3 className="text-2xl font-semibold mb-4 text-center">Solicite um Orçamento</h3>
-        <form className="max-w-lg mx-auto bg-white p-6 rounded-lg shadow space-y-4">
-          <input type="text" placeholder="Nome" className="w-full border p-2 rounded" required />
-          <input type="email" placeholder="Email" className="w-full border p-2 rounded" required />
-          <textarea placeholder="Descreva sua necessidade..." className="w-full border p-2 rounded" rows="4"></textarea>
-          <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 w-full">Enviar</button>
+        <form 
+          className="max-w-lg mx-auto bg-white p-6 rounded-lg shadow space-y-4"
+          onSubmit={handleSubmit}
+        >
+          <input
+            type="text"
+            name="nome"
+            placeholder="Seu Nome"
+            value={form.nome}
+            onChange={handleChange}
+            required
+            className="w-full border p-2 rounded"
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Seu Email"
+            value={form.email}
+            onChange={handleChange}
+            required
+            className="w-full border p-2 rounded"
+          />
+          <textarea
+            name="mensagem"
+            placeholder="Descreva sua necessidade"
+            value={form.mensagem}
+            onChange={handleChange}
+            required
+            rows="4"
+            className="w-full border p-2 rounded"
+          ></textarea>
+          <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 w-full">
+            Enviar
+          </button>
         </form>
+        {status && <p className="text-center mt-3">{status}</p>}
       </section>
 
       {/* Footer */}
@@ -152,10 +134,11 @@ export default function App() {
         </button>
         {showPrivacy && (
           <p className="text-gray-300 mt-4 text-sm max-w-3xl mx-auto">
-            A Amazonsoft está comprometida em proteger a privacidade de seus usuários. Esta Política descreve como coletamos, usamos e protegemos as informações...
+            Política de Privacidade da Lusystech: A Lusystech está comprometida em proteger a privacidade de seus usuários. Esta Política de Privacidade descreve como coletamos, usamos, compartilhamos e protegemos as informações que coletamos dos nossos usuários. Ao usar nossos serviços, você concorda com esta Política de Privacidade. Coleta de Informações A Lusystech coleta informações pessoais que você fornece, tais como nome, endereço de e-mail, telefone, endereço e informações de pagamento, quando você se registra em nossos serviços ou realiza uma transação conosco. Também podemos coletar informações sobre como você usa nossos serviços, incluindo seu endereço IP, tipo de navegador, páginas acessadas e duração de uso. Uso de Informações A Lusystech usa as informações coletadas para fornecer nossos serviços, processar transações, enviar comunicações sobre nossos serviços e responder a solicitações de suporte. Também podemos usar essas informações para melhorar nossos serviços e personalizar sua experiência com base em suas preferências.
+            Compartilhamento de Informações A Lusystech não vende nem aluga suas informações pessoais para terceiros. Podemos compartilhar informações com terceiros, como fornecedores de serviços, para fornecer nossos serviços, processar transações ou fornecer suporte ao cliente. Também podemos compartilhar informações para cumprir requisitos legais, proteger nossos direitos ou os direitos de nossos usuários, ou para investigar fraudes. Proteção de Informações A Lusystech adota medidas de segurança razoáveis para proteger as informações coletadas contra perda, uso indevido, acesso não autorizado, divulgação, alteração ou destruição. No entanto, nenhuma medida de segurança é completamente infalível e não podemos garantir a segurança absoluta das informações coletadas.  Alterações a esta Política de Privacidade A Lusystech reserva-se o direito de atualizar ou alterar esta Política de Privacidade a qualquer momento, sem aviso prévio. As alterações entrarão em vigor assim que forem publicadas nesta página. Contato Se você tiver dúvidas ou preocupações sobre esta Política de Privacidade ou sobre como a Lusystech usa suas informações, entre em contato conosco através do e-mail: lusystech@hotmail.com
           </p>
         )}
-        <p className="text-center text-xs mt-4">&copy; {new Date().getFullYear()} Amazonsoft</p>
+        <p className="text-center text-xs mt-4">&copy; {new Date().getFullYear()} Lusystech</p>
       </footer>
     </div>
   );
