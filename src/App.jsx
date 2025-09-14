@@ -132,13 +132,14 @@ export default function App() {
           {/* Top Section */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
             {/* Logo e Menu */}
-            <div>
-              <img src="/img/arte_grafica_folder.png" alt="Logo" className="w-36 mx-auto md:mx-0" />
-              <ul className="mt-4 space-y-2">
-                <li><a href="#" className="hover:text-blue-400">Home</a></li>
-                <li><a href="#" className="hover:text-blue-400">Serviços</a></li>
-              </ul>
-            </div>
+                <div className="flex flex-col items-center md:items-start md:flex-row md:space-x-6">
+                <img src="/public/img/logolusystech.png" alt="Logo" className="w-44 mb-4 md:mb-0" />
+                <ul className="space-y-2 md:space-y-3 md:flex md:flex-col">
+                  <li><a href="#" className="font-bold text-lg mb-2">Inicio</a></li>
+                  <li><a href="#" className="hover:text-blue-400">Home</a></li>
+                  <li><a href="#" className="hover:text-blue-400">Serviços</a></li>
+                </ul>
+              </div>
 
             {/* Sobre nós */}
             <div>
@@ -174,13 +175,13 @@ export default function App() {
               onClick={() => setShowPrivacy(!showPrivacy)}
               className="flex items-center justify-center mx-auto space-x-2 hover:text-blue-400"
             >
-              <span>Política de Privacidade</span>
+              <span>Política de Privacidade da Lusystech: A Lusystech está comprometida em proteger a privacidade de seus usuários. Esta Política de Privacidade descreve como coletamos, usamos...</span>
               {showPrivacy ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
             </button>
 
             {showPrivacy && (
-              <p className="mt-4 max-w-3xl mx-auto text-gray-400">
-                Política de Privacidade da Lusystech: A Lusystech está comprometida em proteger a privacidade de seus usuários. Esta Política de Privacidade descreve como coletamos, usamos, compartilhamos e protegemos as informações que coletamos dos nossos usuários. Ao usar nossos serviços, você concorda com esta Política de Privacidade. Coleta de Informações A Lusystech coleta informações pessoais que você fornece, tais como nome, endereço de e-mail, telefone, endereço e informações de pagamento, quando você se registra em nossos serviços ou realiza uma transação conosco. Também podemos coletar informações sobre como você usa nossos serviços, incluindo seu endereço IP, tipo de navegador, páginas acessadas e duração de uso. Uso de Informações A Lusystech usa as informações coletadas para fornecer nossos serviços, processar transações, enviar comunicações sobre nossos serviços e responder a solicitações de suporte. Também podemos usar essas informações para melhorar nossos serviços e personalizar sua experiência com base em suas preferências.
+              <p className="mt-4 max-w-3xl mx-auto text-gray-400 text-justify">
+                compartilhamos e protegemos as informações que coletamos dos nossos usuários. Ao usar nossos serviços, você concorda com esta Política de Privacidade. Coleta de Informações A Lusystech coleta informações pessoais que você fornece, tais como nome, endereço de e-mail, telefone, endereço e informações de pagamento, quando você se registra em nossos serviços ou realiza uma transação conosco. Também podemos coletar informações sobre como você usa nossos serviços, incluindo seu endereço IP, tipo de navegador, páginas acessadas e duração de uso. Uso de Informações A Lusystech usa as informações coletadas para fornecer nossos serviços, processar transações, enviar comunicações sobre nossos serviços e responder a solicitações de suporte. Também podemos usar essas informações para melhorar nossos serviços e personalizar sua experiência com base em suas preferências.
                 Compartilhamento de Informações A Lusystech não vende nem aluga suas informações pessoais para terceiros. Podemos compartilhar informações com terceiros, como fornecedores de serviços, para fornecer nossos serviços, processar transações ou fornecer suporte ao cliente. Também podemos compartilhar informações para cumprir requisitos legais, proteger nossos direitos ou os direitos de nossos usuários, ou para investigar fraudes. Proteção de Informações A Lusystech adota medidas de segurança razoáveis para proteger as informações coletadas contra perda, uso indevido, acesso não autorizado, divulgação, alteração ou destruição. No entanto, nenhuma medida de segurança é completamente infalível e não podemos garantir a segurança absoluta das informações coletadas.  Alterações a esta Política de Privacidade A Lusystech reserva-se o direito de atualizar ou alterar esta Política de Privacidade a qualquer momento, sem aviso prévio. As alterações entrarão em vigor assim que forem publicadas nesta página. Contato Se você tiver dúvidas ou preocupações sobre esta Política de Privacidade ou sobre como a Lusystech usa suas informações, entre em contato conosco através do e-mail: lusystech@hotmail.com
                 {/* 🔽 Aqui permanece o texto completo da sua política */}
               </p>
