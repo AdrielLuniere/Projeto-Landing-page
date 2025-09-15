@@ -39,7 +39,7 @@ export default function App() {
     <div className="flex flex-col min-h-screen">
       {/* Navbar */}
       <nav className="bg-blue-600 text-white p-4 flex justify-between items-center">
-        <h1 className="text-xl font-bold">Lusystech</h1>
+        <img src="/public/img/logolusystech.png" alt="Logo" className="w-44 mb-4 md:mb-0" />
         <ul className="flex gap-6">
           <li><a href="#home" className="hover:underline">Home</a></li>
           <li><a href="#empresa" className="hover:underline">Empresa</a></li>
@@ -145,7 +145,7 @@ export default function App() {
             <div>
               <h3 className="font-bold text-lg mb-2">Sobre nós</h3>
               <ul className="space-y-2">
-                <li><a href="#" className="hover:text-blue-400">Quem somos</a></li>
+                <li><a href="#empresa" className="hover:text-blue-400">Quem somos</a></li>
                 <li><a href="#" className="hover:text-blue-400">Projetos</a></li>
               </ul>
             </div>
@@ -164,7 +164,7 @@ export default function App() {
           {/* Redes sociais */}
           <div className="flex justify-center space-x-6 mb-6">
             <a href="#" className="hover:text-blue-400"><FaFacebook size={22} /></a>
-            <a href="#" className="hover:text-pink-400"><FaInstagram size={22} /></a>
+            <a href="https://www.instagram.com/p/DOW6s0JAGxG/?igsh=MW00c2JqMmtkYm5sNA== " className="hover:text-pink-400"><FaInstagram size={22} /></a>
             <a href="#" className="hover:text-red-500"><FaYoutube size={22} /></a>
             <a href="#" className="hover:text-blue-300"><FaLinkedin size={22} /></a>
           </div>
