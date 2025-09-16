@@ -164,7 +164,7 @@ export default function App() {
           {/* Redes sociais */}
           <div className="flex justify-center space-x-6 mb-6">
             <a href="#" className="hover:text-blue-400"><FaFacebook size={22} /></a>
-            <a href="https://www.instagram.com/p/DOW6s0JAGxG/?igsh=MW00c2JqMmtkYm5sNA== " className="hover:text-pink-400"><FaInstagram size={22} /></a>
+            <a href="https://www.instagram.com/p/DOW6s0JAGxG/?igsh=MW00c2JqMmtkYm5sNA==" target="_blank" className="hover:text-pink-400" rel="noopener noreferrer"><FaInstagram size={22} /></a>
             <a href="#" className="hover:text-red-500"><FaYoutube size={22} /></a>
             <a href="#" className="hover:text-blue-300"><FaLinkedin size={22} /></a>
           </div>
