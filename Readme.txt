@@ -7,7 +7,7 @@
 
 ---
 
-## 📖 Sobre o Projeto
+### 📖 Sobre o Projeto
 Este projeto é uma **landing page institucional** desenvolvida para a **Lusystech**, empresa de soluções em **TI e Desenvolvimento**.  
 A página tem como objetivo apresentar a empresa, seus serviços, projetos realizados e oferecer um canal para orçamentos.
 
